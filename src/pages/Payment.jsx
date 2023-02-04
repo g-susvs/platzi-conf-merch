@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { PayPalButton } from 'react-paypal-button-v2';
+import { PayPalButton } from 'react-paypal-button';
 import { useNavigate } from 'react-router-dom';
 import { AppContext } from '../context/AppContext';
 import '../style/components/Payment.css';
@@ -56,9 +56,9 @@ export const Payment = () => {
             buttonStyles={buttonStyles}
             amount={totalPrice}
             onPaymentStart={() => console.log('Start Payment')}
-            onSuccess={(data) => handlePaymentSucces(data)}
-            onError={(error) => console.log(error)}
-            onCancel={(data) => console.log(data)}
+            onPaymentSuccess={(data) => handlePaymentSucces(data)}
+            onPaymentError={(error) => console.log(error)}
+            onPaymentCancel={(data) => console.log(data)}
           />
         </article>
       </section>
